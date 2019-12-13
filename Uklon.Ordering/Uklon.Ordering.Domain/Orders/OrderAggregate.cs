@@ -30,6 +30,18 @@ namespace Uklon.Ordering.Domain.Orders
             return new Ok();
         }
 
+        public void Complete()
+        {
+            var completedEvent = new OrderCompletedEvent(Id, RiderId);
+            Apply(completedEvent);
+            AddDomainEvent(completedEvent);
+        }
+
+        private void Apply(OrderCompletedEvent completedEvent)
+        {
+            Status = OrderStatus.Completed;
+        }
+
         private void Apply(OrderCanceledEvent canceledEvent)
         {
             Status = OrderStatus.Canceled;
