@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DDD\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Uklon.Null" Version="1.1.39988-feature-PART-1081-vehicle-replacement" />
+  </ItemGroup>
+
+</Project>
